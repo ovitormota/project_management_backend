@@ -1,0 +1,14 @@
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/ProjectManagementApplication.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/domain/Activity.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/domain/Client.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/domain/Project.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/domain/enumeration/Status.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/repository/ActivityRepository.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/repository/ClientRepository.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/repository/ProjectRepository.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/service/ActivityService.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/service/ClientService.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/service/ProjectService.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/web/rest/ActivityResource.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/web/rest/ClientResource.java
+/Users/sigaway/Documents/GitHub/project_management_backend/src/main/java/com/projectmanagement/web/rest/ProjectResource.java
