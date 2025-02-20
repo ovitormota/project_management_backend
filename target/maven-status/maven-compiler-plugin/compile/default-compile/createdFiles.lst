@@ -1,0 +1,14 @@
+com/projectmanagement/web/rest/ClientResource.class
+com/projectmanagement/web/rest/ActivityResource.class
+com/projectmanagement/ProjectManagementApplication.class
+com/projectmanagement/repository/ClientRepository.class
+com/projectmanagement/service/ProjectService.class
+com/projectmanagement/web/rest/ProjectResource.class
+com/projectmanagement/domain/Client.class
+com/projectmanagement/repository/ProjectRepository.class
+com/projectmanagement/domain/Project.class
+com/projectmanagement/repository/ActivityRepository.class
+com/projectmanagement/service/ClientService.class
+com/projectmanagement/domain/enumeration/Status.class
+com/projectmanagement/domain/Activity.class
+com/projectmanagement/service/ActivityService.class
