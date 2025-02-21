@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -69,10 +70,10 @@ public class ActivityResource {
      * @return a page of activities.
      */
     @GetMapping
-    public ResponseEntity<Page<Activity>> getAllActivities(Pageable pageable) {
+    public ResponseEntity<List<Activity>> getAllActivities(Pageable pageable) {
         log.debug("Request to get all Activities");
         Page<Activity> page = activityService.findAll(pageable);
-        return ResponseEntity.ok().body(page);
+        return ResponseEntity.ok().body(page.getContent());
     }
 
     /**

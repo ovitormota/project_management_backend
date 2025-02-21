@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -72,10 +73,10 @@ public class ClientResource {
      * @return a page of clients.
      */
     @GetMapping
-    public ResponseEntity<Page<Client>> getAllClients(Pageable pageable) {
+    public ResponseEntity<List<Client>> getAllClients(Pageable pageable) {
         log.debug("Request to get all Clients");
         Page<Client> page = clientService.findAll(pageable);
-        return ResponseEntity.ok().body(page);
+        return ResponseEntity.ok().body(page.getContent());
     }
 
     /**

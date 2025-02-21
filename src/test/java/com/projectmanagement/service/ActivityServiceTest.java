@@ -1,12 +1,14 @@
 package com.projectmanagement.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-import com.projectmanagement.domain.Activity;
-import com.projectmanagement.domain.Project;
-import com.projectmanagement.domain.enumeration.Status;
-import com.projectmanagement.repository.ActivityRepository;
+import java.time.Instant;
+import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,8 +16,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDate;
-import java.util.Optional;
+import com.projectmanagement.domain.Activity;
+import com.projectmanagement.domain.Project;
+import com.projectmanagement.domain.enumeration.Status;
+import com.projectmanagement.repository.ActivityRepository;
 
 @ExtendWith(MockitoExtension.class)
 class ActivityServiceTest {
@@ -38,7 +42,7 @@ class ActivityServiceTest {
         activity.setId(1L);
         activity.setDescription("Test Activity");
         activity.setStatus(Status.IN_PROGRESS);
-        activity.setStartDate(LocalDate.now());
+        activity.setStartDate(Instant.now());
         activity.setProject(project);
     }
 
