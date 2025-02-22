@@ -1,7 +1,10 @@
 package com.projectmanagement.service;
 
 import com.projectmanagement.domain.Project;
+import com.projectmanagement.domain.enumeration.Status;
 import com.projectmanagement.repository.ProjectRepository;
+
+import java.time.Instant;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -89,5 +92,10 @@ public class ProjectService {
      */
     public boolean exists(Long id) {
         return projectRepository.existsById(id);
+    }
+
+     // Método para contar projetos atrasados
+    public long countDelayedProjects() {
+        return projectRepository.countByStatusAndEndDateBefore(Status.IN_PROGRESS, Instant.now());
     }
 }

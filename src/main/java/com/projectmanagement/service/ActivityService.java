@@ -1,8 +1,8 @@
 package com.projectmanagement.service;
 
-import com.projectmanagement.domain.Activity;
-import com.projectmanagement.repository.ActivityRepository;
+import java.time.Instant;
 import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -10,8 +10,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.projectmanagement.domain.Activity;
+import com.projectmanagement.domain.enumeration.Status;
+import com.projectmanagement.repository.ActivityRepository;
+
 /**
- * Service Implementation for managing {@link com.projectmanagement.domain.Activity}.
+ * Service Implementation for managing
+ * {@link com.projectmanagement.domain.Activity}.
  */
 @Service
 @Transactional
@@ -89,5 +94,23 @@ public class ActivityService {
      */
     public boolean exists(Long id) {
         return activityRepository.existsById(id);
+    }
+
+    /**
+     * Count the number of delayed activities
+     *
+     * @return
+     */
+    public long countDelayedActivities() {
+        return activityRepository.countByStatusAndEndDateBefore(Status.IN_PROGRESS, Instant.now());
+    }
+
+    /**
+     * Count the number of pending activities
+     *
+     * @return
+     */
+    public long countPendingActivities() {
+        return activityRepository.countByStatus(Status.PENDING);
     }
 }

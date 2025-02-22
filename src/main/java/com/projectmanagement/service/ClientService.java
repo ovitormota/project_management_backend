@@ -90,4 +90,9 @@ public class ClientService {
     public boolean exists(Long id) {
         return clientRepository.existsById(id);
     }
+
+     // Método para contar clientes cadastrados
+     public long countClients() {
+        return clientRepository.count();
+    }
 }
