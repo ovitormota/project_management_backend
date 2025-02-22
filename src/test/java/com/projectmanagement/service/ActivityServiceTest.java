@@ -40,7 +40,8 @@ class ActivityServiceTest {
 
         activity = new Activity();
         activity.setId(1L);
-        activity.setDescription("Test Activity");
+        activity.setName("Test Activity");
+        activity.setDescription("Test Activity Description");
         activity.setStatus(Status.IN_PROGRESS);
         activity.setStartDate(Instant.now());
         activity.setProject(project);
@@ -53,7 +54,8 @@ class ActivityServiceTest {
         Activity savedActivity = activityService.save(activity);
 
         assertThat(savedActivity).isNotNull();
-        assertThat(savedActivity.getDescription()).isEqualTo("Test Activity");
+        assertThat(savedActivity.getName()).isEqualTo("Test Activity");
+        assertThat(savedActivity.getDescription()).isEqualTo("Test Activity Description");
         verify(activityRepository, times(1)).save(activity);
     }
 

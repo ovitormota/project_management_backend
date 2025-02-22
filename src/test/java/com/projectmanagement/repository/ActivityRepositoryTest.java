@@ -53,6 +53,7 @@ class ActivityRepositoryTest {
         entityManager.flush();
 
         Activity activity = new Activity();
+        activity.setName("Module X");
         activity.setDescription("Develop module X");
         activity.setStatus(Status.IN_PROGRESS);
         activity.setStartDate(Instant.now());
@@ -64,6 +65,7 @@ class ActivityRepositoryTest {
 
         List<Activity> activities = activityRepository.findAll();
         assertThat(activities).hasSize(1);
+        assertThat(activities.get(0).getName()).isEqualTo("Module X");
         assertThat(activities.get(0).getDescription()).isEqualTo("Develop module X");
         assertThat(activities.get(0).getStatus()).isEqualTo(Status.IN_PROGRESS);
         assertThat(activities.get(0).getProject().getName()).isEqualTo("Project Alpha");
